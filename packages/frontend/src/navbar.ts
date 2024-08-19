@@ -150,20 +150,6 @@ export const navbarItemDef = reactive({
 			}], ev.currentTarget ?? ev.target);
 		},
 	},
-	about: {
-		title: i18n.ts.about,
-		icon: 'ti ti-info-circle',
-		action: (ev) => {
-			openInstanceMenu(ev);
-		},
-	},
-	tools: {
-		title: i18n.ts.tools,
-		icon: 'ti ti-tool',
-		action: (ev) => {
-			openToolsMenu(ev);
-		},
-	},
 	reload: {
 		title: i18n.ts.reload,
 		icon: 'ti ti-refresh',
