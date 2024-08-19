@@ -8,7 +8,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<div :class="$style.main">
 		<div v-if="note.channel" :class="$style.colorBar" :style="{ background: note.channel.color }"></div>
 		<MkAvatar :class="$style.avatar" :user="note.user" link preview/>
-		<div :class="$style.body">
+		<div :class="$style.body" :style="{ cursor: 'pointer' }" @click="router.push(notePage(note))">
 			<MkNoteHeader :class="$style.header" :note="note" :mini="true"/>
 			<div>
 				<p v-if="note.cw != null" :class="$style.cw">
@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<MkCwButton v-model="showContent" :text="note.text" :files="note.files" :poll="note.poll"/>
 				</p>
 				<div v-show="note.cw == null || showContent">
-					<MkSubNoteContent :class="$style.text" :note="note"/>
+					<MkSubNoteContent :class="$style.text" :note="note" @click.stop/>
 				</div>
 			</div>
 		</div>
@@ -51,6 +51,7 @@ import { i18n } from '@/i18n.js';
 import { $i } from '@/account.js';
 import { userPage } from '@/filters/user.js';
 import { checkWordMute } from '@/scripts/check-word-mute.js';
+import { useRouter } from '@/router/supplier.js';
 
 const props = withDefaults(defineProps<{
 	note: Misskey.entities.Note;
@@ -63,6 +64,8 @@ const props = withDefaults(defineProps<{
 });
 
 const muted = ref($i ? checkWordMute(props.note, $i, $i.mutedWords) : false);
+
+const router = useRouter();
 
 const showContent = ref(false);
 const replies = ref<Misskey.entities.Note[]>([]);
