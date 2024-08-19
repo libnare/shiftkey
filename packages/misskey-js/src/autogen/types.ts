@@ -21312,7 +21312,7 @@ export type operations = {
         'application/json': {
           /** Format: misskey:id */
           noteId: string;
-          text: string;
+          text: string | null;
           fileIds?: string[];
           mediaIds?: string[];
           poll?: ({
