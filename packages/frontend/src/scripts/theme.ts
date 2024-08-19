@@ -34,6 +34,7 @@ export const getBuiltinThemes = () => Promise.all(
 	[
 		'l-light',
 		'l-stella-r2',
+		'l-byeolvit-polaris',
 		'l-coffee',
 		'l-apricot',
 		'l-rainy',
@@ -45,6 +46,7 @@ export const getBuiltinThemes = () => Promise.all(
 
 		'd-dark',
 		'd-stella-r2',
+		'd-byeolvit-noctiluca',
 		'd-persimmon',
 		'd-astro',
 		'd-future',
