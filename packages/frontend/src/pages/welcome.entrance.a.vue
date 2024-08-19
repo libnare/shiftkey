@@ -14,9 +14,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<img :src="misskeysvg" class="misskey"/>
 	</div>
 	<div class="emojis">
-		<MkEmoji :normal="true" :noStyle="true" emoji="👍"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
 		<MkEmoji :normal="true" :noStyle="true" emoji="❤"/>
-		<MkEmoji :normal="true" :noStyle="true" emoji="😆"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
 		<MkEmoji :normal="true" :noStyle="true" emoji="🎉"/>
 		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
 	</div>

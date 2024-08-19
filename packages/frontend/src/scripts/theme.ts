@@ -8,8 +8,8 @@ import tinycolor from 'tinycolor2';
 import { deepClone } from './clone.js';
 import type { BundledTheme } from 'shiki/themes';
 import { globalEvents } from '@/events.js';
-import lightTheme from '@/themes/_light.json5';
-import darkTheme from '@/themes/_dark.json5';
+import lightTheme from '@/themes/l-stella-r2.json5';
+import darkTheme from '@/themes/d-stella-r2.json5';
 import { miLocalStorage } from '@/local-storage.js';
 
 export type Theme = {
@@ -33,6 +33,7 @@ export const themeProps = Object.keys(lightTheme.props).filter(key => !key.start
 export const getBuiltinThemes = () => Promise.all(
 	[
 		'l-light',
+		'l-stella-r2',
 		'l-coffee',
 		'l-apricot',
 		'l-rainy',
@@ -43,6 +44,7 @@ export const getBuiltinThemes = () => Promise.all(
 		'l-u0',
 
 		'd-dark',
+		'd-stella-r2',
 		'd-persimmon',
 		'd-astro',
 		'd-future',
