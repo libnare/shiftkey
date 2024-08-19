@@ -691,6 +691,9 @@ importers:
       '@discordapp/twemoji':
         specifier: 15.0.3
         version: 15.0.3
+      '@fontsource/jetbrains-mono':
+        specifier: ^5.0.21
+        version: 5.0.21
       '@github/webauthn-json':
         specifier: 2.1.1
         version: 2.1.1
@@ -805,6 +808,12 @@ importers:
       photoswipe:
         specifier: 5.4.4
         version: 5.4.4
+      pretendard:
+        specifier: ^1.3.9
+        version: 1.3.9
+      pretendard-jp:
+        specifier: ^1.3.9
+        version: 1.3.9
       punycode:
         specifier: 2.3.1
         version: 2.3.1
@@ -2878,6 +2887,9 @@ packages:
 
   '@fastify/view@9.1.0':
     resolution: {integrity: sha512-jRTGDljs/uB2p8bf6c1x4stGjP7H84VQkhbtDgCx55Mxf9Fplud5UZIHubvL4BTTX8jNYEzP1FpNAOBi7vibxg==}
+
+  '@fontsource/jetbrains-mono@5.0.21':
+    resolution: {integrity: sha512-BjI7a4U4HC4R3rEq96dN4CKtH8qxHFA+zU+6Ftusn/9k+VbF+VZ1l5bmHCUtg2ekjXbGF955/1FODlCKXleaGQ==}
 
   '@github/webauthn-json@2.1.1':
     resolution: {integrity: sha512-XrftRn4z75SnaJOmZQbt7Mk+IIjqVHw+glDGOxuHwXkZBZh/MBoRS7MHjSZMDaLhT4RjN2VqiEU7EOYleuJWSQ==}
@@ -7804,6 +7816,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -9884,6 +9897,12 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  pretendard-jp@1.3.9:
+    resolution: {integrity: sha512-F00fRLyHa9IQh80hj80Z3wEDamD1gFStFKY2yQUdugQp+54mk7LEEuB3uRxgWk2EMLvigr2Zc34hKTe2X9okuQ==}
+
+  pretendard@1.3.9:
+    resolution: {integrity: sha512-PaQAADyLY5v4kYFwkpSJHbSSYIkiriY/1xXw75TKoZ9UQQqeU+tvP05yTdZAWibiIYoo8ZKtRv8PM7w0IaywSw==}
+
   prettier@3.3.3:
     resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
@@ -11115,7 +11134,6 @@ packages:
 
   ts-case-convert@2.0.2:
     resolution: {integrity: sha512-vdKfx1VAdpvEBOBv5OpVu5ZFqRg9HdTI4sYt6qqMeICBeNyXvitrarCnFWNDAki51IKwCyx+ZssY46Q9jH5otA==}
-    bundledDependencies: []
 
   ts-dedent@2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
@@ -14020,6 +14038,8 @@ snapshots:
     dependencies:
       fastify-plugin: 4.5.0
       toad-cache: 3.7.0
+
+  '@fontsource/jetbrains-mono@5.0.21': {}
 
   '@github/webauthn-json@2.1.1': {}
 
@@ -22762,6 +22782,10 @@ snapshots:
   postgres-range@1.1.3: {}
 
   prelude-ls@1.2.1: {}
+
+  pretendard-jp@1.3.9: {}
+
+  pretendard@1.3.9: {}
 
   prettier@3.3.3: {}
 

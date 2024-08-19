@@ -74,7 +74,7 @@ function copy() {
 }
 
 .codeBlockFallbackCode {
-	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+	font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
 
 .codePlaceholderRoot {

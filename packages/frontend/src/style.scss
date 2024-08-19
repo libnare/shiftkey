@@ -6,6 +6,16 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+@import "@fontsource/jetbrains-mono/index.css";
+@import "pretendard/dist/web/static/pretendard.css";
+@import "pretendard-jp/dist/web/static/pretendard-jp.css";
+// @import "pretendard/dist/web/static/pretendard-dynamic-subset.css";
+// @import "pretendard-jp/dist/web/static/pretendard-jp-dynamic-subset.css";
+
+$default-font: "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+$system-font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+$monospace-font: "JetBrains Mono", "Pretendard JP", Pretendard, Fira code, Fira Mono, Consolas, Menlo, Courier, monospace !important;
+
 :root {
 	--radius: 12px;
 	--marginFull: 16px;
@@ -42,7 +52,7 @@ html {
 	accent-color: var(--accent);
 	overflow: auto;
 	overflow-wrap: break-word;
-	font-family: 'Hiragino Maru Gothic Pro', "BIZ UDGothic", Roboto, HelveticaNeue, Arial, sans-serif;
+	font-family: $default-font;
 	font-size: 14px;
 	line-height: 1.35;
 	text-size-adjust: 100%;
@@ -88,7 +98,7 @@ html {
 	}
 
 	&.useSystemFont {
-		font-family: system-ui;
+		font-family: $system-font;
 	}
 }
 
@@ -428,7 +438,7 @@ rt {
 }
 
 ._monospace {
-	font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace !important;
+	font-family: $monospace-font
 }
 
 ._zoom {

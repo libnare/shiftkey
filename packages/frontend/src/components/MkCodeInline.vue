@@ -16,7 +16,7 @@ const props = defineProps<{
 <style module lang="scss">
 .root {
 	display: inline-block;
-	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+	font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 	overflow-wrap: anywhere;
 	background: var(--bg);
 	padding: .1em;
