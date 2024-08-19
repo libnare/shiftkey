@@ -62,6 +62,8 @@ type Source = {
 
 	publishTarballInsteadOfProvideRepositoryUrl?: boolean;
 
+	apFileBaseUrl?: string;
+
 	proxy?: string;
 	proxySmtp?: string;
 	proxyBypassHosts?: string[];
@@ -129,6 +131,7 @@ export type Config = {
 		index: string;
 		scope?: 'local' | 'global' | string[];
 	} | undefined;
+	apFileBaseUrl: string | undefined;
 	proxy: string | undefined;
 	proxySmtp: string | undefined;
 	proxyBypassHosts: string[] | undefined;
@@ -246,6 +249,7 @@ export function loadConfig(): Config {
 		sentryForBackend: config.sentryForBackend,
 		sentryForFrontend: config.sentryForFrontend,
 		id: config.id,
+		apFileBaseUrl: config.apFileBaseUrl,
 		proxy: config.proxy,
 		proxySmtp: config.proxySmtp,
 		proxyBypassHosts: config.proxyBypassHosts,
