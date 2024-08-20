@@ -20,7 +20,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 		></iframe>
 		<span v-else>invalid url</span>
 	</div>
-	<div :class="$style.action" @click.stop>
+	<div :class="$style.action">
 		<MkButton :small="true" inline @click="playerEnabled = false">
 			<i class="ti ti-x"></i> {{ i18n.ts.disablePlayer }}
 		</MkButton>
