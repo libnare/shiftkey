@@ -1,6 +1,7 @@
 {
 	"name": "misskey",
 	"version": "2024.8.0",
+	"prefix": "sk",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
