@@ -5069,6 +5069,10 @@ export interface Locale extends ILocale {
      */
     "createdAntennas": string;
     /**
+     * これ以上このクリップにノートを追加できません。
+     */
+    "clipNoteLimitExceeded": string;
+    /**
      * 編集済み: {date} {time}
      */
     "noteUpdatedAt": ParameterizedString<"date" | "time">;
