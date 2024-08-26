@@ -226,6 +226,7 @@ export class NoteUpdateService implements OnApplicationShutdown {
 				files: noteObj.files ?? [],
 				fileIds: noteObj.fileIds ?? [],
 				poll: noteObj.poll ?? null,
+				emojis: noteObj.emojis ?? [],
 			});
 
 			//#region AP deliver
