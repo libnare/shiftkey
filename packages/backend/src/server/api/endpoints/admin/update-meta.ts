@@ -127,6 +127,19 @@ export const paramDef = {
 		objectStorageUseProxy: { type: 'boolean' },
 		objectStorageSetPublicRead: { type: 'boolean' },
 		objectStorageS3ForcePathStyle: { type: 'boolean' },
+		useRemoteObjectStorage: { type: 'boolean' },
+		remoteObjectStorageBaseUrl: { type: 'string', nullable: true },
+		remoteObjectStorageBucket: { type: 'string', nullable: true },
+		remoteObjectStoragePrefix: { type: 'string', nullable: true },
+		remoteObjectStorageEndpoint: { type: 'string', nullable: true },
+		remoteObjectStorageRegion: { type: 'string', nullable: true },
+		remoteObjectStoragePort: { type: 'integer', nullable: true },
+		remoteObjectStorageAccessKey: { type: 'string', nullable: true },
+		remoteObjectStorageSecretKey: { type: 'string', nullable: true },
+		remoteObjectStorageUseSSL: { type: 'boolean' },
+		remoteObjectStorageUseProxy: { type: 'boolean' },
+		remoteObjectStorageSetPublicRead: { type: 'boolean' },
+		remoteObjectStorageS3ForcePathStyle: { type: 'boolean' },
 		enableIpLogging: { type: 'boolean' },
 		enableActiveEmailValidation: { type: 'boolean' },
 		enableVerifymailApi: { type: 'boolean' },
@@ -517,6 +530,58 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 
 			if (ps.objectStorageS3ForcePathStyle !== undefined) {
 				set.objectStorageS3ForcePathStyle = ps.objectStorageS3ForcePathStyle;
+			}
+
+			if (ps.useRemoteObjectStorage !== undefined) {
+				set.useRemoteObjectStorage = ps.useRemoteObjectStorage;
+			}
+
+			if (ps.remoteObjectStorageBaseUrl !== undefined) {
+				set.remoteObjectStorageBaseUrl = ps.remoteObjectStorageBaseUrl;
+			}
+
+			if (ps.remoteObjectStorageBucket !== undefined) {
+				set.remoteObjectStorageBucket = ps.remoteObjectStorageBucket;
+			}
+
+			if (ps.remoteObjectStoragePrefix !== undefined) {
+				set.remoteObjectStoragePrefix = ps.remoteObjectStoragePrefix;
+			}
+
+			if (ps.remoteObjectStorageEndpoint !== undefined) {
+				set.remoteObjectStorageEndpoint = ps.remoteObjectStorageEndpoint;
+			}
+
+			if (ps.remoteObjectStorageRegion !== undefined) {
+				set.remoteObjectStorageRegion = ps.remoteObjectStorageRegion;
+			}
+
+			if (ps.remoteObjectStoragePort !== undefined) {
+				set.remoteObjectStoragePort = ps.remoteObjectStoragePort;
+			}
+
+			if (ps.remoteObjectStorageAccessKey !== undefined) {
+				set.remoteObjectStorageAccessKey = ps.remoteObjectStorageAccessKey;
+			}
+
+			if (ps.remoteObjectStorageSecretKey !== undefined) {
+				set.remoteObjectStorageSecretKey = ps.remoteObjectStorageSecretKey;
+			}
+
+			if (ps.remoteObjectStorageUseSSL !== undefined) {
+				set.remoteObjectStorageUseSSL = ps.remoteObjectStorageUseSSL;
+			}
+
+			if (ps.remoteObjectStorageUseProxy !== undefined) {
+				set.remoteObjectStorageUseProxy = ps.remoteObjectStorageUseProxy;
+			}
+
+			if (ps.remoteObjectStorageSetPublicRead !== undefined) {
+				set.remoteObjectStorageSetPublicRead = ps.remoteObjectStorageSetPublicRead;
+			}
+
+			if (ps.remoteObjectStorageS3ForcePathStyle !== undefined) {
+				set.remoteObjectStorageS3ForcePathStyle = ps.remoteObjectStorageS3ForcePathStyle;
 			}
 
 			if (ps.deeplAuthKey !== undefined) {
