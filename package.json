@@ -1,6 +1,6 @@
 {
 	"name": "misskey",
-	"version": "2024.10.1",
+	"version": "2024.11.0-alpha.0",
 	"prefix": "sk",
 	"codename": "nasubi",
 	"repository": {
@@ -80,7 +80,7 @@
 		"@tensorflow/tfjs-core": "4.4.0"
 	},
 	"volta": {
-		"node": "20.16.0",
-		"pnpm": "9.7.1"
+		"node": "22.11.0",
+		"pnpm": "9.13.0"
 	}
 }
