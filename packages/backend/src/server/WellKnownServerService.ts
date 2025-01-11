@@ -93,6 +93,19 @@ export class WellKnownServerService {
 			return this.oauth2ProviderService.generateRFC8414();
 		});
 
+		fastify.get('/.well-known/assetlinks.json', async (request, reply) => {
+			reply.header('Content-Type', 'application/json');
+			return {
+				relation: ['delegate_permission/common.handle_all_urls'],
+				target: {
+					namespace: 'android_app',
+					package_name: 'place.stella.twa',
+					sha256_cert_fingerprints:
+						['0E:14:9F:91:C0:EF:07:E9:90:48:74:BB:F9:54:41:C2:F4:01:BE:C8:86:F8:5F:D5:53:3B:5D:E1:44:BA:98:0C'],
+				},
+			};
+		});
+
 		/* TODO
 fastify.get('/.well-known/change-password', async (request, reply) => {
 });
