@@ -1,12 +1,13 @@
 {
 	"name": "misskey",
 	"version": "2025.1.0",
+	"prefix": "sk",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/misskey-dev/misskey.git"
 	},
-	"packageManager": "pnpm@9.6.0",
+	"packageManager": "pnpm@9.7.1",
 	"workspaces": [
 		"packages/frontend-shared",
 		"packages/frontend",
@@ -77,5 +78,9 @@
 	},
 	"optionalDependencies": {
 		"@tensorflow/tfjs-core": "4.4.0"
+	},
+	"volta": {
+		"node": "22.11.0",
+		"pnpm": "9.6.0"
 	}
 }

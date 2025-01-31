@@ -4118,6 +4118,8 @@ export type components = {
       /** Format: date-time */
       createdAt: string;
       /** Format: date-time */
+      updatedAt?: string | null;
+      /** Format: date-time */
       deletedAt?: string | null;
       text: string | null;
       cw?: string | null;
@@ -4903,6 +4905,7 @@ export type components = {
       gtlAvailable: boolean;
       ltlAvailable: boolean;
       canPublicNote: boolean;
+      canEditNote: boolean | null;
       mentionLimit: number;
       canInvite: boolean;
       inviteLimit: number;
@@ -8296,6 +8299,18 @@ export type operations = {
             objectStorageUseSSL: boolean;
             objectStorageUseProxy: boolean;
             objectStorageSetPublicRead: boolean;
+            useRemoteObjectStorage: boolean;
+            remoteObjectStorageBaseUrl: string | null;
+            remoteObjectStorageBucket: string | null;
+            remoteObjectStoragePrefix: string | null;
+            remoteObjectStorageEndpoint: string | null;
+            remoteObjectStorageRegion: string | null;
+            remoteObjectStoragePort: number | null;
+            remoteObjectStorageAccessKey: string | null;
+            remoteObjectStorageSecretKey: string | null;
+            remoteObjectStorageUseSSL: boolean;
+            remoteObjectStorageUseProxy: boolean;
+            remoteObjectStorageSetPublicRead: boolean;
             enableIpLogging: boolean;
             enableActiveEmailValidation: boolean;
             enableVerifymailApi: boolean;
@@ -8331,6 +8346,7 @@ export type operations = {
             name: string | null;
             shortName: string | null;
             objectStorageS3ForcePathStyle: boolean;
+            remoteObjectStorageS3ForcePathStyle: boolean;
             privacyPolicyUrl: string | null;
             inquiryUrl: string | null;
             repositoryUrl: string | null;
@@ -10651,6 +10667,19 @@ export type operations = {
           objectStorageUseProxy?: boolean;
           objectStorageSetPublicRead?: boolean;
           objectStorageS3ForcePathStyle?: boolean;
+          useRemoteObjectStorage?: boolean;
+          remoteObjectStorageBaseUrl?: string | null;
+          remoteObjectStorageBucket?: string | null;
+          remoteObjectStoragePrefix?: string | null;
+          remoteObjectStorageEndpoint?: string | null;
+          remoteObjectStorageRegion?: string | null;
+          remoteObjectStoragePort?: number | null;
+          remoteObjectStorageAccessKey?: string | null;
+          remoteObjectStorageSecretKey?: string | null;
+          remoteObjectStorageUseSSL?: boolean;
+          remoteObjectStorageUseProxy?: boolean;
+          remoteObjectStorageSetPublicRead?: boolean;
+          remoteObjectStorageS3ForcePathStyle?: boolean;
           enableIpLogging?: boolean;
           enableActiveEmailValidation?: boolean;
           enableVerifymailApi?: boolean;

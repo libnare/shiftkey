@@ -293,6 +293,9 @@ id: 'aidx'
 # IP address family used for outgoing request (ipv4, ipv6 or dual)
 #outgoingAddressFamily: ipv4
 
+# Override the file URL rendering in ActivityPub (Object Storage file only)
+#apFileBaseUrl: https://example.com/
+
 # Proxy for HTTP/HTTPS
 #proxy: http://127.0.0.1:3128
 

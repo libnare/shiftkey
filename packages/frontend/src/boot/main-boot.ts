@@ -51,6 +51,9 @@ export async function mainBoot() {
 			case 'classic':
 				rootComponent = defineAsyncComponent(() => import('@/ui/classic.vue'));
 				break;
+			case 'note':
+				rootComponent = defineAsyncComponent(() => import('@/ui/note.vue'));
+				break;
 			default:
 				rootComponent = defineAsyncComponent(() => import('@/ui/universal.vue'));
 				break;
@@ -72,7 +75,8 @@ export async function mainBoot() {
 
 	let reloadDialogShowing = false;
 	stream.on('_disconnected_', async () => {
-		if (defaultStore.state.serverDisconnectedBehavior === 'reload') {
+		if (defaultStore.state.serverDisconnectedBehavior === 'disabled') return;
+		else if (defaultStore.state.serverDisconnectedBehavior === 'reload') {
 			location.reload();
 		} else if (defaultStore.state.serverDisconnectedBehavior === 'dialog') {
 			if (reloadDialogShowing) return;

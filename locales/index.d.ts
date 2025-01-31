@@ -5167,6 +5167,10 @@ export interface Locale extends ILocale {
      */
     "clipNoteLimitExceeded": string;
     /**
+     * 編集済み: {date} {time}
+     */
+    "noteUpdatedAt": ParameterizedString<"date" | "time">;
+    /**
      * パフォーマンス
      */
     "performance": string;
@@ -6917,6 +6921,10 @@ export interface Locale extends ILocale {
              * パブリック投稿の許可
              */
             "canPublicNote": string;
+            /**
+             * ノートの編集
+             */
+            "canEditNote": string;
             /**
              * ノート内の最大メンション数
              */
