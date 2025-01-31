@@ -1,6 +1,6 @@
 {
 	"name": "misskey",
-	"version": "2024.11.0",
+	"version": "2025.1.0",
 	"prefix": "sk",
 	"codename": "nasubi",
 	"repository": {
@@ -81,6 +81,6 @@
 	},
 	"volta": {
 		"node": "22.11.0",
-		"pnpm": "9.13.0"
+		"pnpm": "9.6.0"
 	}
 }

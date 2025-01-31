@@ -20,7 +20,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<div class="_gaps">
 						<MkSwitch v-model="objectStorageForm.state.useObjectStorage">
 							<template #label>{{ i18n.ts.useObjectStorage }}<span v-if="objectStorageForm.modifiedStates.useObjectStorage" class="_modified">{{ i18n.ts.modified }}</span></template>
-							<template #caption>{{ i18n.ts.objectStorageEnableDesc }}</template>
 						</MkSwitch>
 
 						<template v-if="objectStorageForm.state.useObjectStorage">
@@ -96,7 +95,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<div class="_gaps">
 						<MkSwitch v-model="remoteObjectStorageForm.state.useRemoteObjectStorage">
 							<template #label>{{ i18n.ts.useObjectStorage }} ({{ i18n.ts.remote }})<span v-if="remoteObjectStorageForm.modifiedStates.useRemoteObjectStorage" class="_modified">{{ i18n.ts.modified }}</span></template>
-							<template #caption>{{ i18n.ts.objectStorageRemoteEnableDesc }}</template>
 						</MkSwitch>
 
 						<template v-if="remoteObjectStorageForm.state.useRemoteObjectStorage">
