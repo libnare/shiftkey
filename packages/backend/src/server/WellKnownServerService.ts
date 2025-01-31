@@ -94,6 +94,14 @@ export class WellKnownServerService {
 		});
 
 		fastify.get('/.well-known/assetlinks.json', async (request, reply) => {
+			const allowedHost = 'stella.place';
+
+			const requestHost = request.hostname;
+			if (requestHost !== allowedHost) {
+				reply.code(404);
+				return;
+			}
+
 			reply.header('Content-Type', 'application/json');
 			return {
 				relation: ['delegate_permission/common.handle_all_urls'],
