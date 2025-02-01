@@ -103,7 +103,7 @@ export class WellKnownServerService {
 			}
 
 			reply.header('Content-Type', 'application/json');
-			return {
+			return [{
 				relation: ['delegate_permission/common.handle_all_urls'],
 				target: {
 					namespace: 'android_app',
@@ -113,7 +113,7 @@ export class WellKnownServerService {
 						'96:E2:C0:89:02:EA:C6:23:20:A9:6E:6A:1E:42:1B:47:DF:AF:A6:16:D0:D2:49:62:C6:38:35:4D:2E:78:9C:1B',
 					],
 				},
-			};
+			}];
 		});
 
 		/* TODO
