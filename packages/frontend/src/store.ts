@@ -6,8 +6,8 @@
 import { markRaw, ref } from 'vue';
 import * as Misskey from 'misskey-js';
 import { hemisphere } from '@@/js/intl-const.js';
-import lightTheme from '@@/themes/l-light.json5';
-import darkTheme from '@@/themes/d-green-lime.json5';
+import lightTheme from '@@/themes/l-stella-r2.json5';
+import darkTheme from '@@/themes/d-stella-r2.json5';
 import type { SoundType } from '@/scripts/sound.js';
 import type { Ast } from '@syuilo/aiscript';
 import { DEFAULT_DEVICE_KIND, type DeviceKind } from '@/scripts/device-kind.js';
@@ -212,7 +212,7 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	serverDisconnectedBehavior: {
 		where: 'device',
-		default: 'quiet' as 'quiet' | 'reload' | 'dialog',
+		default: 'quiet' as 'quiet' | 'reload' | 'dialog' | 'disabled',
 	},
 	nsfw: {
 		where: 'device',
@@ -328,7 +328,7 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	menuDisplay: {
 		where: 'device',
-		default: 'sideFull' as 'sideFull' | 'sideIcon' | 'top',
+		default: 'sideIcon' as 'sideFull' | 'sideIcon' | 'top',
 	},
 	reportError: {
 		where: 'device',
@@ -336,7 +336,7 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	squareAvatars: {
 		where: 'device',
-		default: false,
+		default: true,
 	},
 	showAvatarDecorations: {
 		where: 'device',
@@ -400,7 +400,7 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	enableCondensedLine: {
 		where: 'device',
-		default: true,
+		default: false,
 	},
 	additionalUnicodeEmojiIndexes: {
 		where: 'device',

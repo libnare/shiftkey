@@ -183,6 +183,10 @@ export function getNoteMenu(props: {
 
 	const cleanups = [] as (() => void)[];
 
+	function edit(): void {
+		os.post({ initialNote: appearNote, renote: appearNote.renote, reply: appearNote.reply, channel: appearNote.channel, updateMode: true });
+	}
+
 	function del(): void {
 		os.confirm({
 			type: 'warning',
@@ -450,6 +454,13 @@ export function getNoteMenu(props: {
 		if (appearNote.userId === $i.id || $i.isModerator || $i.isAdmin) {
 			menuItems.push({ type: 'divider' });
 			if (appearNote.userId === $i.id) {
+				if ($i.policies.canEditNote) {
+					menuItems.push({
+						icon: 'ti ti-edit',
+						text: i18n.ts.edit,
+						action: edit,
+					});
+				}
 				menuItems.push({
 					icon: 'ti ti-edit',
 					text: i18n.ts.deleteAndEdit,
