@@ -146,21 +146,14 @@ export const navbarItemDef = reactive({
 					miLocalStorage.setItem('ui', 'classic');
 					unisonReload();
 				},
+			}, {
+				text: i18n.ts.note,
+				active: ui === 'note',
+				action: () => {
+					miLocalStorage.setItem('ui', 'note');
+					unisonReload();
+				}
 			}], ev.currentTarget ?? ev.target);
-		},
-	},
-	about: {
-		title: i18n.ts.about,
-		icon: 'ti ti-info-circle',
-		action: (ev) => {
-			openInstanceMenu(ev);
-		},
-	},
-	tools: {
-		title: i18n.ts.tools,
-		icon: 'ti ti-tool',
-		action: (ev) => {
-			openToolsMenu(ev);
 		},
 	},
 	reload: {

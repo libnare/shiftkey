@@ -4,7 +4,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<component :is="link ? EmA : 'span'" v-bind="bound" class="_noSelect" :class="[$style.root, { [$style.cat]: user.isCat }]">
+<component :is="link ? EmA : 'span'" v-bind="bound" class="_noSelect" :class="[$style.root, { [$style.cat]: user.isCat, [$style.square]: true }]">
 	<EmImgWithBlurhash :class="$style.inner" :src="url" :hash="user.avatarBlurhash" :cover="true" :onlyAvgColor="true"/>
 	<div v-if="user.isCat" :class="[$style.ears]">
 		<div :class="$style.earLeft">
@@ -236,6 +236,14 @@ function getDecorationOffset(decoration: Omit<Misskey.entities.UserDetailed['ava
 				}
 			}
 		}
+	}
+}
+
+.square {
+	border-radius: 20%;
+
+	> .inner {
+		border-radius: 20%;
 	}
 }
 
