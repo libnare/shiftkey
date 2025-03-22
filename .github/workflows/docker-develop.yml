@@ -28,7 +28,7 @@ jobs:
           platform=${{ matrix.platform }}
           echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
       - name: Check out the repo
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Get commit sha
         id: git
         run: echo "commit_sha=$(git rev-parse --short=7 HEAD)" >> "$GITHUB_OUTPUT"
