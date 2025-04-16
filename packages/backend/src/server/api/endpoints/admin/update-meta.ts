@@ -21,6 +21,12 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		disableRegistration: { type: 'boolean', nullable: true },
+		wsUrl: { type: 'string', nullable: true },
+		wsTargetDomains: {
+			type: 'array', nullable: true, items: {
+				type: 'string',
+			},
+		},
 		pinnedUsers: {
 			type: 'array', nullable: true, items: {
 				type: 'string',
@@ -213,6 +219,14 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 
 			if (typeof ps.disableRegistration === 'boolean') {
 				set.disableRegistration = ps.disableRegistration;
+			}
+			
+			if (ps.wsUrl !== undefined) {
+				set.wsUrl = ps.wsUrl;
+			}
+			
+			if (Array.isArray(ps.wsTargetDomains)) {
+				set.wsTargetDomains = ps.wsTargetDomains.filter(Boolean);
 			}
 
 			if (Array.isArray(ps.pinnedUsers)) {

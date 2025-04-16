@@ -736,4 +736,17 @@ export class MiMeta {
 		nullable: true,
 	})
 	public googleAnalyticsMeasurementId: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public wsUrl: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		array: true,
+		default: '{}',
+	})
+	public wsTargetDomains: string[];
 }

@@ -5110,6 +5110,8 @@ export type components = {
       maxFileSize: number;
       /** @enum {string} */
       federation: 'all' | 'specified' | 'none';
+      wsUrl: string | null;
+      wsTargetDomains: string[];
     };
     MetaDetailedOnly: {
       features?: {
@@ -8395,6 +8397,8 @@ export type operations = {
             /** @enum {string} */
             federation: 'all' | 'specified' | 'none';
             federationHosts: string[];
+            wsUrl: string | null;
+            wsTargetDomains: string[];
           };
         };
       };
@@ -10614,6 +10618,8 @@ export type operations = {
       content: {
         'application/json': {
           disableRegistration?: boolean | null;
+          wsUrl?: string | null;
+          wsTargetDomains?: string[] | null;
           pinnedUsers?: string[] | null;
           hiddenTags?: string[] | null;
           blockedHosts?: string[] | null;
