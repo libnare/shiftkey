@@ -12,6 +12,7 @@ const siteName = document.querySelector<HTMLMetaElement>('meta[property="og:site
 export const host = address.host;
 export const hostname = address.hostname;
 export const url = address.origin;
+export const port = address.port;
 export const apiUrl = location.origin + '/api';
 
 const metaWsUrl = document.querySelector<HTMLMetaElement>('meta[name="ws_url"]')?.content;
