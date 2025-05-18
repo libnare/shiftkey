@@ -16,12 +16,13 @@ await execa('pnpm', ['clean'], {
 	stderr: process.stderr,
 });
 
+await execa('pnpm', ['build-pre'], {
+	cwd: _dirname + '/../',
+	stdout: process.stdout,
+	stderr: process.stderr,
+});
+
 await Promise.all([
-	execa('pnpm', ['build-pre'], {
-		cwd: _dirname + '/../',
-		stdout: process.stdout,
-		stderr: process.stderr,
-	}),
 	execa('pnpm', ['build-assets'], {
 		cwd: _dirname + '/../',
 		stdout: process.stdout,

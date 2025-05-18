@@ -484,6 +484,78 @@ export class MiMeta {
 	@Column('boolean', {
 		default: false,
 	})
+	public useRemoteObjectStorage: boolean;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageBucket: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStoragePrefix: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageBaseUrl: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageEndpoint: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageRegion: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageAccessKey: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public remoteObjectStorageSecretKey: string | null;
+
+	@Column('integer', {
+		nullable: true,
+	})
+	public remoteObjectStoragePort: number | null;
+
+	@Column('boolean', {
+		default: true,
+	})
+	public remoteObjectStorageUseSSL: boolean;
+
+	@Column('boolean', {
+		default: true,
+	})
+	public remoteObjectStorageUseProxy: boolean;
+
+	@Column('boolean', {
+		default: false,
+	})
+	public remoteObjectStorageSetPublicRead: boolean;
+
+	@Column('boolean', {
+		default: true,
+	})
+	public remoteObjectStorageS3ForcePathStyle: boolean;
+
+	@Column('boolean', {
+		default: false,
+	})
 	public enableIpLogging: boolean;
 
 	@Column('boolean', {
@@ -669,6 +741,19 @@ export class MiMeta {
 		default: [],
 	})
 	public deliverSuspendedSoftware: SoftwareSuspension[];
+
+	@Column('varchar', {
+		length: 1024,
+		nullable: true,
+	})
+	public wsUrl: string | null;
+
+	@Column('varchar', {
+		length: 1024,
+		array: true,
+		default: '{}',
+	})
+	public wsTargetDomains: string[];
 }
 
 export type SoftwareSuspension = {

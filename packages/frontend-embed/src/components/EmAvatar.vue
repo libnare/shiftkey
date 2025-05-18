@@ -239,6 +239,14 @@ function getDecorationOffset(decoration: Omit<Misskey.entities.UserDetailed['ava
 	}
 }
 
+.square {
+	border-radius: 20%;
+
+	> .inner {
+		border-radius: 20%;
+	}
+}
+
 .decoration {
 	position: absolute;
 	z-index: 1;

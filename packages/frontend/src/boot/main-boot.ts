@@ -54,6 +54,9 @@ export async function mainBoot() {
 			case 'visitor':
 				rootComponent = await import('@/ui/visitor.vue').then(x => x.default);
 				break;
+			case 'note':
+				rootComponent = await import('@/ui/note.vue').then(x => x.default);
+				break;
 			default:
 				rootComponent = await import('@/ui/universal.vue').then(x => x.default);
 				break;
@@ -83,6 +86,7 @@ export async function mainBoot() {
 
 	let reloadDialogShowing = false;
 	stream.on('_disconnected_', async () => {
+		if (prefer.s.serverDisconnectedBehavior === 'disabled') return;
 		if (prefer.s.serverDisconnectedBehavior === 'reload') {
 			window.location.reload();
 		} else if (prefer.s.serverDisconnectedBehavior === 'dialog') {

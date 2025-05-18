@@ -113,6 +113,7 @@ export class ApRendererService {
 			actor: this.userEntityService.genLocalUserUri(note.userId),
 			type: 'Announce',
 			published: this.idService.parse(note.id).date.toISOString(),
+			updated: note.updatedAt?.toISOString() ?? undefined,
 			to,
 			cc,
 			object,
@@ -169,7 +170,7 @@ export class ApRendererService {
 		return {
 			type: 'Document',
 			mediaType: file.webpublicType ?? file.type,
-			url: this.driveFileEntityService.getPublicUrl(file),
+			url: this.driveFileEntityService.getPublicUrl(file, undefined, true),
 			name: file.comment,
 			sensitive: file.isSensitive,
 		};
@@ -252,7 +253,7 @@ export class ApRendererService {
 	public renderImage(file: MiDriveFile): IApImage {
 		return {
 			type: 'Image',
-			url: this.driveFileEntityService.getPublicUrl(file),
+			url: this.driveFileEntityService.getPublicUrl(file, undefined, true),
 			sensitive: file.isSensitive,
 			name: file.comment,
 		};
@@ -492,6 +493,7 @@ export class ApRendererService {
 			_misskey_quote: quote,
 			quoteUrl: quote,
 			published: this.idService.parse(note.id).date.toISOString(),
+			updated: note.updatedAt?.toISOString() ?? undefined,
 			to,
 			cc,
 			inReplyTo,

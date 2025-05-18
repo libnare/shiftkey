@@ -14,7 +14,19 @@ export const hostname = address.hostname;
 export const url = address.origin;
 export const port = address.port;
 export const apiUrl = location.origin + '/api';
-export const wsOrigin = location.origin;
+
+const metaWsUrl = document.querySelector<HTMLMetaElement>('meta[name="ws_url"]')?.content;
+const metaWsTargetDomains = document.querySelector<HTMLMetaElement>('meta[name="ws_target_domains"]')?.content;
+
+const targetDomains = metaWsTargetDomains ? JSON.parse(metaWsTargetDomains) as string[] : [];
+
+const shouldUseCustomWsUrl = metaWsUrl && (
+	targetDomains.length === 0 ||
+  targetDomains.some(domain => location.hostname.includes(domain))
+);
+
+export const wsOrigin = shouldUseCustomWsUrl ? metaWsUrl : location.origin;
+
 export const lang = localStorage.getItem('lang') ?? 'en-US';
 export const langs = _LANGS_;
 const preParseLocale = localStorage.getItem('locale');

@@ -154,27 +154,34 @@ export class ClientServerService {
 			'name': this.meta.name || this.config.host,
 			'start_url': '/',
 			'display': 'standalone',
-			'background_color': '#313a42',
+			'background_color': '#1b1a25',
 			// 空文字列の場合右辺を使いたいため
 			// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-			'theme_color': this.meta.themeColor || '#86b300',
+			'theme_color': this.meta.themeColor || '#b8b9f7',
 			'icons': [{
 				// 空文字列の場合右辺を使いたいため
 				// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-				'src': this.meta.app192IconUrl || '/static-assets/icons/192.png',
-				'sizes': '192x192',
-				'type': 'image/png',
-				'purpose': 'maskable',
-			}, {
-				// 空文字列の場合右辺を使いたいため
-				// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-				'src': this.meta.app512IconUrl || '/static-assets/icons/512.png',
+				'src': '/static-assets/icons/None-512.png',
 				'sizes': '512x512',
 				'type': 'image/png',
 				'purpose': 'maskable',
 			}, {
+				// 空文字列の場合右辺を使いたいため
+				// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+				'src': '/static-assets/icons/None-769.png',
+				'sizes': '769x769',
+				'type': 'image/png',
+				'purpose': 'maskable',
+			}, {
+				// 空文字列の場合右辺を使いたいため
+				// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+				'src': '/static-assets/icons/None-1024.png',
+				'sizes': '1024x1024',
+				'type': 'image/png',
+				'purpose': 'maskable',
+			}, {
 				'src': '/static-assets/splash.png',
-				'sizes': '300x300',
+				'sizes': '1024x1024',
 				'type': 'image/png',
 				'purpose': 'any',
 			}],
@@ -204,12 +211,14 @@ export class ClientServerService {
 		return {
 			instanceName: meta.name ?? 'Misskey',
 			icon: meta.iconUrl,
-			appleTouchIcon: meta.app512IconUrl,
+			appleTouchIcon: '/apple-touch-icon.png',
 			themeColor: meta.themeColor,
 			serverErrorImageUrl: meta.serverErrorImageUrl ?? 'https://xn--931a.moe/assets/error.jpg',
 			infoImageUrl: meta.infoImageUrl ?? 'https://xn--931a.moe/assets/info.jpg',
 			notFoundImageUrl: meta.notFoundImageUrl ?? 'https://xn--931a.moe/assets/not-found.jpg',
 			instanceUrl: this.config.url,
+			wsUrl: meta.wsUrl,
+			wsTargetDomains: meta.wsTargetDomains,
 			metaJson: htmlSafeJsonStringify(await this.metaEntityService.packDetailed(meta)),
 			now: Date.now(),
 		};

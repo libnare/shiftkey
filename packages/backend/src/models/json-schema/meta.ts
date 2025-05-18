@@ -302,6 +302,18 @@ export const packedMetaLiteSchema = {
 			enum: ['all', 'specified', 'none'],
 			optional: false, nullable: false,
 		},
+		wsUrl: {
+			type: 'string',
+			optional: false, nullable: true,
+		},
+		wsTargetDomains: {
+			type: 'array',
+			optional: false, nullable: false,
+			items: {
+				type: 'string',
+				optional: false, nullable: false,
+			},
+		},
 	},
 } as const;
 

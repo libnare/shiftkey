@@ -76,7 +76,9 @@ watch(() => props.lang, (to) => {
 	padding: 1em;
 	margin: 0;
 	overflow: auto;
-	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+	border-radius: 8px;
+	border: 1px solid var(--MI_THEME-divider);
+	font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 
 	color: var(--shiki-fallback);
 	background-color: var(--shiki-fallback-bg);
@@ -88,7 +90,7 @@ watch(() => props.lang, (to) => {
 
 	& pre,
 	& code {
-		font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+		font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 	}
 }
 

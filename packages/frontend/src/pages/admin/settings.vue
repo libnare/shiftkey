@@ -109,6 +109,27 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</MkFolder>
 
 			<MkFolder>
+				<template #icon><i class="ti ti-plug-connected"></i></template>
+				<template #label>WebSocket</template>
+				<template v-if="wsForm.modified.value" #footer>
+					<MkFormFooter :form="wsForm"/>
+				</template>
+
+				<div class="_gaps">
+					<MkInput v-model="wsForm.state.wsUrl" type="url">
+						<template #label>Custom WebSocket URL<span v-if="wsForm.modifiedStates.wsUrl" class="_modified">{{ i18n.ts.modified }}</span></template>
+						<template #caption>Set custom WebSocket URL if your load balancer doesn't support WebSockets. Leave empty to use instance URL.</template>
+						<template #prefix><i class="ti ti-world-www"></i></template>
+					</MkInput>
+
+					<MkTextarea v-model="wsForm.state.wsTargetDomains">
+						<template #label>Target domains for WebSocket URL<span v-if="wsForm.modifiedStates.wsTargetDomains" class="_modified">{{ i18n.ts.modified }}</span></template>
+						<template #caption>The custom WebSocket URL will only be applied when accessed from these domains. Enter one domain per line. Leave empty to apply on all domains.</template>
+					</MkTextarea>
+				</div>
+			</MkFolder>
+
+			<MkFolder>
 				<template #icon><i class="ti ti-world-cog"></i></template>
 				<template #label>ServiceWorker</template>
 				<template v-if="serviceWorkerForm.modified.value" #footer>
@@ -345,6 +366,17 @@ const filesForm = useForm({
 	await os.apiWithDialog('admin/update-meta', {
 		cacheRemoteFiles: state.cacheRemoteFiles,
 		cacheRemoteSensitiveFiles: state.cacheRemoteSensitiveFiles,
+	});
+	fetchInstance(true);
+});
+
+const wsForm = useForm({
+	wsUrl: meta.wsUrl ?? '',
+	wsTargetDomains: meta.wsTargetDomains?.join('\n') ?? '',
+}, async (state) => {
+	await os.apiWithDialog('admin/update-meta', {
+		wsUrl: state.wsUrl,
+		wsTargetDomains: state.wsTargetDomains.split('\n').filter(Boolean),
 	});
 	fetchInstance(true);
 });

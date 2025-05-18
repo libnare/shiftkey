@@ -180,7 +180,7 @@
 			<p>${messages.solution2}</p>
 			<p>${messages.solution3}</p>
 			<p>${messages.solution4}</p>
-			<details style="color: #86b300;">
+			<details style="color: rgb(242, 238, 252);">
 				<summary>${messages.otherOption}</summary>
 				<a href="/flush">
 					<button class="button-small">
@@ -215,8 +215,12 @@
 		<code>${details.toString()} ${JSON.stringify(details)}</code>`;
 		errorsElement.appendChild(detailsElement);
 		addStyle(`
+		@import url("https://fonts.bunny.net/css?family=jetbrains-mono");
+		@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css");
+		@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp-dynamic-subset.css");
+
 		* {
-			font-family: BIZ UDGothic, Roboto, HelveticaNeue, Arial, sans-serif;
+			font-family: "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", Meiryo, "Noto Sans JP", "Noto Sans KR", "Malgun Gothic", Osaka, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 		}
 
 		#misskey_app,
@@ -226,8 +230,8 @@
 
 		body,
 		html {
-			background-color: #222;
-			color: #dfddcc;
+			background-color: rgb(27, 26, 37);
+			color: rgb(242, 238, 252);
 			justify-content: center;
 			margin: auto;
 			padding: 10px;
@@ -243,21 +247,21 @@
 		}
 
 		.button-big {
-			background: linear-gradient(90deg, rgb(134, 179, 0), rgb(74, 179, 0));
+			background: linear-gradient(90deg, rgb(184, 185, 247), rgb(204, 184, 247));
 			line-height: 50px;
 		}
 
 		.button-big:hover {
-			background: rgb(153, 204, 0);
+			background: rgb(230, 230, 252);
 		}
 
 		.button-small {
-			background: #444;
+			background: transparent;
 			line-height: 40px;
 		}
 
 		.button-small:hover {
-			background: #555;
+			background: rgba(184, 185, 247, 0.15);
 		}
 
 		.button-label-big {
@@ -268,7 +272,7 @@
 		}
 
 		.button-label-small {
-			color: rgb(153, 204, 0);
+			color: rgba(184, 185, 247);
 			font-size: 16px;
 			padding: 12px;
 		}
@@ -289,17 +293,23 @@
 			padding-top: 2rem;
 		}
 
+		body > details > summary {
+			margin-bottom: 16px;
+		}
+
 		h1 {
 			font-size: 1.5em;
 			margin: 1em;
 		}
 
 		code {
-			font-family: Fira, FiraCode, monospace;
+			color: #f8f8f2;
+			text-shadow: 0 1px rgba(0,0,0,.3);
+			font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
 		}
 
 		#errorInfo {
-			background: #333;
+			background: #272822;
 			margin-bottom: 2rem;
 			padding: 0.5rem 1rem;
 			width: 40rem;

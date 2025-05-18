@@ -99,6 +99,11 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<EmA :to="notePage(appearNote)">
 					<EmTime :time="appearNote.createdAt" mode="detail" colored/>
 				</EmA>
+				<div v-if="appearNote.updatedAt" :class="$style.updatedAtLine">
+					<EmA :to="notePage(appearNote)">
+						{{ i18n.ts.updatedAt }}: <EmTime :time="appearNote.updatedAt" mode="detail"/>
+					</EmA>
+				</div>
 			</div>
 			<EmReactionsViewer v-if="appearNote.reactionAcceptance !== 'likeOnly'" ref="reactionsViewer" :maxNumber="16" :note="appearNote">
 				<template #more>
@@ -410,6 +415,12 @@ const collapsed = ref(appearNote.value.cw == null && isLong);
 	margin: 16px 0;
 	opacity: 0.7;
 	font-size: 0.9em;
+}
+
+.updatedAtLine {
+	margin-top: 4px;
+	font-size: 0.85em;
+	opacity: 0.7;
 }
 
 .noteFooterButton {

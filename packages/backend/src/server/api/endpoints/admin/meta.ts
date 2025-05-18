@@ -317,6 +317,66 @@ export const meta = {
 				type: 'boolean',
 				optional: false, nullable: false,
 			},
+			useRemoteObjectStorage: {
+				type: 'boolean',
+				optional: false,
+				nullable: false,
+			},
+			remoteObjectStorageBaseUrl: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageBucket: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStoragePrefix: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageEndpoint: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageRegion: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStoragePort: {
+				type: 'number',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageAccessKey: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageSecretKey: {
+				type: 'string',
+				optional: false,
+				nullable: true,
+			},
+			remoteObjectStorageUseSSL: {
+				type: 'boolean',
+				optional: false,
+				nullable: false,
+			},
+			remoteObjectStorageUseProxy: {
+				type: 'boolean',
+				optional: false,
+				nullable: false,
+			},
+			remoteObjectStorageSetPublicRead: {
+				type: 'boolean',
+				optional: false,
+				nullable: false,
+			},
 			enableIpLogging: {
 				type: 'boolean',
 				optional: false, nullable: false,
@@ -457,6 +517,10 @@ export const meta = {
 				type: 'boolean',
 				optional: false, nullable: false,
 			},
+			remoteObjectStorageS3ForcePathStyle: {
+				type: 'boolean',
+				optional: false, nullable: false,
+			},
 			privacyPolicyUrl: {
 				type: 'string',
 				optional: false, nullable: true,
@@ -521,6 +585,18 @@ export const meta = {
 				optional: false, nullable: false,
 			},
 			federationHosts: {
+				type: 'array',
+				optional: false, nullable: false,
+				items: {
+					type: 'string',
+					optional: false, nullable: false,
+				},
+			},
+			wsUrl: {
+				type: 'string',
+				optional: false, nullable: true,
+			},
+			wsTargetDomains: {
 				type: 'array',
 				optional: false, nullable: false,
 				items: {
@@ -656,6 +732,19 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				objectStorageUseProxy: instance.objectStorageUseProxy,
 				objectStorageSetPublicRead: instance.objectStorageSetPublicRead,
 				objectStorageS3ForcePathStyle: instance.objectStorageS3ForcePathStyle,
+				useRemoteObjectStorage: instance.useRemoteObjectStorage,
+				remoteObjectStorageBaseUrl: instance.remoteObjectStorageBaseUrl,
+				remoteObjectStorageBucket: instance.remoteObjectStorageBucket,
+				remoteObjectStoragePrefix: instance.remoteObjectStoragePrefix,
+				remoteObjectStorageEndpoint: instance.remoteObjectStorageEndpoint,
+				remoteObjectStorageRegion: instance.remoteObjectStorageRegion,
+				remoteObjectStoragePort: instance.remoteObjectStoragePort,
+				remoteObjectStorageAccessKey: instance.remoteObjectStorageAccessKey,
+				remoteObjectStorageSecretKey: instance.remoteObjectStorageSecretKey,
+				remoteObjectStorageUseSSL: instance.remoteObjectStorageUseSSL,
+				remoteObjectStorageUseProxy: instance.remoteObjectStorageUseProxy,
+				remoteObjectStorageSetPublicRead: instance.remoteObjectStorageSetPublicRead,
+				remoteObjectStorageS3ForcePathStyle: instance.remoteObjectStorageS3ForcePathStyle,
 				deeplAuthKey: instance.deeplAuthKey,
 				deeplIsPro: instance.deeplIsPro,
 				enableIpLogging: instance.enableIpLogging,
@@ -691,6 +780,8 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				federation: instance.federation,
 				federationHosts: instance.federationHosts,
 				deliverSuspendedSoftware: instance.deliverSuspendedSoftware,
+				wsUrl: instance.wsUrl,
+				wsTargetDomains: instance.wsTargetDomains,
 			};
 		});
 	}

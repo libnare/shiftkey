@@ -5,8 +5,8 @@
 
 import { markRaw, ref } from 'vue';
 import * as Misskey from 'misskey-js';
-import lightTheme from '@@/themes/l-light.json5';
-import darkTheme from '@@/themes/d-green-lime.json5';
+import lightTheme from '@@/themes/l-stella-r2.json5';
+import darkTheme from '@@/themes/d-stella-r2.json5';
 import { hemisphere } from '@@/js/intl-const.js';
 import type { DeviceKind } from '@/utility/device-kind.js';
 import type { Plugin } from '@/plugin.js';
@@ -90,7 +90,7 @@ export const store = markRaw(new Pizzax('base', {
 	},
 	menuDisplay: {
 		where: 'device',
-		default: 'sideFull' as 'sideFull' | 'sideIcon' | 'top',
+		default: 'sideIcon' as 'sideFull' | 'sideIcon' | 'top',
 	},
 	postFormWithHashtags: {
 		where: 'device',
@@ -216,7 +216,7 @@ export const store = markRaw(new Pizzax('base', {
 	},
 	serverDisconnectedBehavior: {
 		where: 'device',
-		default: 'quiet' as 'quiet' | 'reload' | 'dialog',
+		default: 'quiet' as 'quiet' | 'reload' | 'dialog' | 'disabled',
 	},
 	nsfw: {
 		where: 'device',
@@ -320,7 +320,7 @@ export const store = markRaw(new Pizzax('base', {
 	},
 	squareAvatars: {
 		where: 'device',
-		default: false,
+		default: true,
 	},
 	showAvatarDecorations: {
 		where: 'device',
@@ -372,7 +372,7 @@ export const store = markRaw(new Pizzax('base', {
 	},
 	enableCondensedLine: {
 		where: 'device',
-		default: true,
+		default: false,
 	},
 	keepScreenOn: {
 		where: 'device',

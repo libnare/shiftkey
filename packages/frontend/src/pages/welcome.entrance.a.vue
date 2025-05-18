@@ -13,6 +13,13 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<div :class="$style.poweredBy">Powered by</div>
 		<img :src="misskeysvg" :class="$style.misskey"/>
 	</div>
+	<div :class="$style.emojis">
+		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="❤"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="🎉"/>
+		<MkEmoji :normal="true" :noStyle="true" emoji="🍮"/>
+	</div>
 	<div :class="$style.contents">
 		<MkVisitorDashboard/>
 	</div>
@@ -131,6 +138,20 @@ misskeyApiGet('federation/instances', {
 
 	@media (max-width: 450px) {
 		width: 100px;
+	}
+}
+
+.emojis {
+	position: fixed;
+	bottom: 32px;
+	left: 35px;
+
+	> * {
+		margin-right: 8px;
+	}
+
+	@media (max-width: 1200px) {
+		display: none;
 	}
 }
 

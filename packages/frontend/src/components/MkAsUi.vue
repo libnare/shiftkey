@@ -171,7 +171,7 @@ function openPostForm() {
 }
 
 .fontMonospace {
-	font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
+	font-family: "JetBrains Mono", "Pretendard JP", Pretendard, Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
 }
 
 .postForm {

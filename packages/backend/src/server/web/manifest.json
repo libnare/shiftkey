@@ -3,24 +3,30 @@
 	"name": "Misskey",
 	"start_url": "/",
 	"display": "standalone",
-	"background_color": "#313a42",
-	"theme_color": "#86b300",
+	"background_color": "#1b1a25",
+	"theme_color": "#b8b9f7",
 	"icons": [
 		{
-			"src": "/static-assets/icons/192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "maskable"
-		},
-		{
-			"src": "/static-assets/icons/512.png",
+			"src": "/static-assets/icons/None-512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "maskable"
 		},
 		{
+			"src": "/static-assets/icons/None-769.png",
+			"sizes": "769x769",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "/static-assets/icons/None-1024.png",
+			"sizes": "1024x1024",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
 			"src": "/static-assets/splash.png",
-			"sizes": "300x300",
+			"sizes": "1024x1024",
 			"type": "image/png",
 			"purpose": "any"
 		}
