@@ -4,7 +4,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<component :is="link ? EmA : 'span'" v-bind="bound" class="_noSelect" :class="[$style.root, { [$style.cat]: user.isCat, [$style.square]: true }]">
+<component :is="link ? EmA : 'span'" v-bind="bound" class="_noSelect" :class="[$style.root, { [$style.cat]: user.isCat }]">
 	<EmImgWithBlurhash :class="$style.inner" :src="url" :hash="user.avatarBlurhash" :cover="true" :onlyAvgColor="true"/>
 	<div v-if="user.isCat" :class="[$style.ears]">
 		<div :class="$style.earLeft">

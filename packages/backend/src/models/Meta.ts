@@ -737,6 +737,11 @@ export class MiMeta {
 	})
 	public googleAnalyticsMeasurementId: string | null;
 
+	@Column('jsonb', {
+		default: [],
+	})
+	public deliverSuspendedSoftware: SoftwareSuspension[];
+
 	@Column('varchar', {
 		length: 1024,
 		nullable: true,
@@ -750,3 +755,8 @@ export class MiMeta {
 	})
 	public wsTargetDomains: string[];
 }
+
+export type SoftwareSuspension = {
+	software: string,
+	versionRange: string,
+};

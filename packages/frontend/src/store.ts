@@ -5,8 +5,8 @@
 
 import { markRaw, ref } from 'vue';
 import * as Misskey from 'misskey-js';
-import lightTheme from '@@/themes/l-light.json5';
-import darkTheme from '@@/themes/d-green-lime.json5';
+import lightTheme from '@@/themes/l-stella-r2.json5';
+import darkTheme from '@@/themes/d-stella-r2.json5';
 import { hemisphere } from '@@/js/intl-const.js';
 import type { DeviceKind } from '@/utility/device-kind.js';
 import type { Plugin } from '@/plugin.js';
